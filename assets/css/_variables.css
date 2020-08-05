@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Raleway:wght@500&family=Tangerine:wght@700&display=swap%27');
+
+:root {
+    --main-color-bg:#FFFEE9;
+    --main-color-white: #ffffff;
+    --main-color-dark-brown: #D58258;
+    --main-color-dark-grey: #4D483D;
+    --main-color-light-brown: #ECB984;
+    --main-color-green: #A8A676;
+    --main-color-dark-green: #474734;
+    --main-color-dark-maroon: #963A2F;
+    --main-heading-font:'Tangerine', cursive;
+    --main-text-font: 'Questrial', sans-serif;
+    --sub-text-font: 'Raleway', sans-serif;
+}
+
+    
