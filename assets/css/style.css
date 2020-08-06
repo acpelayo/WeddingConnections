@@ -191,9 +191,6 @@ BUTTONS AND LINKS
 
 .btn,
 .btn::after {
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-o-transition: all 0.3s;
 	transition: all 0.3s;
 }
 
@@ -249,9 +246,6 @@ a.animated-button:visited {
 	letter-spacing: 3px;
 	border-radius: 0;
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
 
@@ -264,9 +258,6 @@ a.animated-button:visited:after {
 	top: 50%;
 	width: 150%;
 	z-index: -1;
-	-webkit-transition: all 0.75s ease 0s;
-	-moz-transition: all 0.75s ease 0s;
-	-o-transition: all 0.75s ease 0s;
 	transition: all 0.75s ease 0s;
 }
 
@@ -296,9 +287,6 @@ a.animated-button:visited {
 	overflow: hidden;
 	letter-spacing: 3px;
 	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
 	transition: all 1s ease;
 }
 
@@ -341,7 +329,6 @@ a.animated-button.thar-one:before {
 .hvr-underline-from-center {
 	display: inline-block;
 	vertical-align: middle;
-	-webkit-transform: perspective(1px) translateZ(0);
 	transform: perspective(1px) translateZ(0);
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 	position: relative;
@@ -356,11 +343,8 @@ a.animated-button.thar-one:before {
 	right: 51%;
 	bottom: 0;
 	height: 1px;
-	-webkit-transition-property: left, right;
 	transition-property: left, right;
-	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
 
@@ -537,6 +521,8 @@ HOMEPAGE
 
 .hero__btn-primary {
 	display: block;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	margin: auto;
 	margin-bottom: 0.5rem;
@@ -571,6 +557,7 @@ a.btn-link:hover {
 }
 
 #services img {
+	-o-object-fit: cover;
 	object-fit: cover;
 	width: 100%;
 	height: 60vh;
@@ -642,6 +629,7 @@ a.btn-link:hover {
 .portfolio__img img {
 	width: 100%;
 	height: auto;
+	-o-object-fit: cover;
 	object-fit: cover;
 	margin: 1.2rem 0;
 }
@@ -668,8 +656,6 @@ a.btn-link:hover {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	text-align: center;
 }
@@ -703,6 +689,7 @@ a.btn-link:hover {
 	border-radius: 50%;
 	height: 150px;
 	width: 150px;
+	-o-object-fit: cover;
 	object-fit: cover;
 	margin-bottom: 2rem;
 }
@@ -755,6 +742,7 @@ a.btn-link:hover {
 
 #suppliers img {
 	height: 120px;
+	-o-object-fit: scale-down;
 	object-fit: scale-down;
 }
 
@@ -808,6 +796,7 @@ SERVICES
 
 .service__img {
 	height: 100%;
+	-o-object-fit: cover;
 	object-fit: cover;
 	width: 100%;
 	z-index: 0;
@@ -860,6 +849,7 @@ PORTFOLIO
 
 .showcase__img {
 	height: 300px;
+	-o-object-fit: cover;
 	object-fit: cover;
 	transition: 500ms ease;
 	transition-property: width, height, border-radius;
@@ -933,11 +923,13 @@ ABOUT US
 }
 
 .about__img {
+	-o-object-fit: cover;
 	object-fit: cover;
 }
 
 .about__img img {
 	height: 60vh;
+	-o-object-fit: cover;
 	object-fit: cover;
 	width: inherit;
 }
@@ -1067,6 +1059,8 @@ MEDIA QUERY
 
 	a.animated-button.thar-one {
 		margin-left: 0;
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
 		width: fit-content;
 		margin: auto;
 	}
@@ -1185,6 +1179,7 @@ MEDIA QUERY
 		border-radius: 50%;
 		height: 110px;
 		width: 110px;
+		-o-object-fit: cover;
 		object-fit: cover;
 		margin-bottom: 2rem;
 		margin-top: 1rem;
