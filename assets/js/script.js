@@ -1,63 +1,63 @@
-jQuery('.dropdown-toggle').click(function() {
-    var location = jQuery(this).attr('href');
-    window.location.href = location;
-    return false;
+jQuery('.dropdown-toggle').click(function () {
+	let location = jQuery(this).attr('href');
+	window.location.href = location;
+	return false;
 });
 
-
-
 // GET FILENAME/TITLE
-var fileName = window.location.pathname;
+let fileName = window.location.pathname;
+let indexRegex1 = /\/$/;
+let indexRegex2 = /index.html$/;
+let aboutRegex = /about.html$/;
+let servicesRegex = /services.html$/;
+let portfolioRegex = /portfolio.html$/;
+let contactRegex = /contact_us$/;
 
 // NAVIGATION BAR
 $(document).ready(function () {
-	var folded = true; 
-	var nav = $('.navbar');
-	var scrollDist = 0;
-	var endPoint = window.innerHeight / 2; 
-	var opacity = 0;
+	let folded = true;
+	let nav = $('.navbar');
+	let scrollDist = 0;
+	let endPoint = window.innerHeight / 2;
+	let opacity = 0;
 
-	// if (fileName == '/index.html' || fileName == '/') {
-		$(document).scroll(function () {
-			scrollDist = $(document).scrollTop();
-			opacity = scrollDist / endPoint;
-			if (opacity > 1) {
-				opacity = 1;
-			}
-			if (folded) {
-				nav.css('transition', 'unset');
-				nav.css('background-color', 'rgba(77, 72, 61, ' + opacity + ')');
-			} else {
-				nav.css('background-color', 'rgba(77, 72, 61, 1)');
-			}
-		});
+	$(document).scroll(function () {
+		scrollDist = $(document).scrollTop();
+		opacity = scrollDist / endPoint;
+		if (opacity > 1) {
+			opacity = 1;
+		}
+		if (folded) {
+			nav.css('transition', 'unset');
+			nav.css('background-color', 'rgba(77, 72, 61, ' + opacity + ')');
+		} else {
+			nav.css('background-color', 'rgba(77, 72, 61, 1)');
+		}
+	});
 
-		$('#btn-menu').click(function () {
-			if (folded && opacity <= 1) {
-				folded = false;
-				nav.css('transition', 'background-color 200ms ease');
-				nav.css('background-color', 'rgba(77, 72, 61, 1)');
-			} else if (!folded) {
-				folded = true;
-				nav.css('transition', 'background-color 500ms ease');
-				nav.css('background-color', 'rgba(77, 72, 61, ' + opacity + ')');
-			}
-		});
-	// } else {
-	// 	nav.css('background-color', 'rgba(77, 72, 61, 1)');
-	// }
+	$('#btn-menu').click(function () {
+		if (folded && opacity <= 1) {
+			folded = false;
+			nav.css('transition', 'background-color 200ms ease');
+			nav.css('background-color', 'rgba(77, 72, 61, 1)');
+		} else if (!folded) {
+			folded = true;
+			nav.css('transition', 'background-color 500ms ease');
+			nav.css('background-color', 'rgba(77, 72, 61, ' + opacity + ')');
+		}
+	});
 
 	jQuery('.dropdown-toggle').click(function () {
-		var location = jQuery(this).attr('href');
+		let location = jQuery(this).attr('href');
 		window.location.href = location;
 		return false;
 	});
 });
 
 // PARALLAX ANIMATIONS
-if (fileName == '/about.html') {
+if (aboutRegex.test(fileName)) {
 	$(document).ready(function () {
-		var parallaxElement = document.getElementsByClassName('parallax-item');
+		let parallaxElement = document.getElementsByClassName('parallax-item');
 		new simpleParallax(parallaxElement, {
 			overflow: true,
 			delay: 0.6,
@@ -68,7 +68,7 @@ if (fileName == '/about.html') {
 }
 
 // FOR SERVICES PAGE
-if (fileName == '/services.html') {
+if (servicesRegex.test(fileName)) {
 	// Execute when document loads
 	$(document).ready(function () {
 		zoom();
@@ -131,7 +131,7 @@ if (fileName == '/services.html') {
 }
 
 // LIGHTBOX SETTINGS
-if (fileName == '/portfolio.html' || '/') {
+if (portfolioRegex.test(fileName) || indexRegex1.test(fileName) || indexRegex2.test(fileName)) {
 	lightbox.option({
 		'disableScrolling': true,
 		'fadeDuration': 0,
@@ -143,5 +143,5 @@ if (fileName == '/portfolio.html' || '/') {
 
 // CAROUSEL SETTINGS
 $('.carousel').carousel({
-  interval: 4000
-})
+	interval: 4000,
+});
