@@ -114,7 +114,7 @@ if (servicesRegex.test(fileName)) {
 		$('.service__img').each(function () {
 			let imageTop = $(this).parent().offset().top;
 			let imageHeight = $(this).parent().outerHeight();
-			let percentage = ((viewportBottom - imageTop) / (viewportHeight + imageHeight) - 0.5) * parallaxRange;
+			let percentage = -((viewportBottom - imageTop) / (viewportHeight + imageHeight) - 0.5) * parallaxRange;
 			$(this).css('transform', 'translateY(' + percentage + '%)');
 		});
 	}
