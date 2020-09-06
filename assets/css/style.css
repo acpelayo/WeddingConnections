@@ -35,7 +35,6 @@ body {
 
 section {
 	padding: 5.5rem 0;
-	overflow-x: hidden;
 }
 
 ul {
@@ -843,6 +842,10 @@ PORTFOLIO
 	max-width: 1920px;
 } */
 
+.showcase {
+	overflow: hidden;
+}
+
 .showcase__img-container {
 	width: 100%;
 	text-align: center;
@@ -1217,6 +1220,9 @@ MEDIA QUERY
 }
 
 @media (max-width: 539.98px) {
+	section {
+		overflow-x: hidden;
+	}
 	.hero__h3 {
 		font-size: 1rem;
 	}
